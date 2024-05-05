@@ -505,3 +505,10 @@ div.content {
 		opacity: 0;
 	}
 }
+
+/* SIDEBAR */
+
+.algo-sidebar {
+	display: flex;
+	flex-direction: column;
+}

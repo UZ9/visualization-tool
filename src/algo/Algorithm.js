@@ -106,11 +106,12 @@ export function addDropDownGroupToAlgorithmBar(optionNames, groupName, group) {
 
 export function addRadioButtonGroupToAlgorithmBar(buttonNames, groupName, group) {
 	const buttonList = [];
-	const newTable = document.createElement('table');
+	const newTable = document.createElement('div');
+	newTable.setAttribute('class', 'radio-group')
 
 	for (let i = 0; i < buttonNames.length; i++) {
-		const midLevel = document.createElement('tr');
-		const bottomLevel = document.createElement('td');
+		const midLevel = document.createElement('div');
+		const bottomLevel = document.createElement('div');
 
 		const button = document.createElement('input');
 		button.setAttribute('type', 'radio');
@@ -129,7 +130,7 @@ export function addRadioButtonGroupToAlgorithmBar(buttonNames, groupName, group)
 	}
 
 	if (!group) {
-		const topLevelTableEntry = document.createElement('td');
+		const topLevelTableEntry = document.createElement('div');
 		topLevelTableEntry.appendChild(newTable);
 
 		const controlBar = document.getElementById('AlgorithmSpecificControls');
@@ -149,7 +150,7 @@ export function addControlToAlgorithmBar(type, value, group) {
 	element.setAttribute('value', value);
 
 	if (!group) {
-		const tableEntry = document.createElement('td');
+		const tableEntry = document.createElement('div');
 		tableEntry.appendChild(element);
 
 		const controlBar = document.getElementById('AlgorithmSpecificControls');
@@ -180,7 +181,7 @@ export function addGroupToAlgorithmBar(horizontal, parentGroup) {
 	group.setAttribute('class', horizontal ? 'hgroup' : 'vgroup');
 
 	if (!parentGroup) {
-		const tableEntry = document.createElement('td');
+		const tableEntry = document.createElement('div');
 		tableEntry.appendChild(group);
 
 		const controlBar = document.getElementById('AlgorithmSpecificControls');
